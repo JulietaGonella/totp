@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "55e9e846-f763-4c21-9bea-52fb6a810024",
+		"name": "Actividad-Clase 5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26610340"
+	},
+	"item": [
+		{
+			"name": "GET Copy",
+			"item": [
+				{
+					"name": "http://localhost:3000/generate-qr",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/generate-qr?email=julietagonella2001@hotmail.com&appName=smartdrop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generate-qr"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "julietagonella2001@hotmail.com"
+								},
+								{
+									"key": "appName",
+									"value": "smartdrop"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/generate-totp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/generate-totp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"generate-totp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST Copy",
+			"item": [
+				{
+					"name": "http://localhost:3000/verify-totp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"juligonella@gmail.com\",\r\n  \"appName\": \"brocoly\",\r\n  \"token\": \"248418\"   // el token generado por la app de autenticación\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/verify-totp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"verify-totp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
